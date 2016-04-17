@@ -24,19 +24,20 @@ public class BootReceiver extends BroadcastReceiver {
         boolean isFirstBoot = sp.getBoolean("isFirst", true);
         if (isFirstBoot) {
             Toast.makeText(context, "Boot Completed", Toast.LENGTH_SHORT).show();
+            //Adopted for working on Settings.Secure
             /*
             You can use this method to make changes to the settings storage
             upon first boot. This application will only run once. You can apply any changes you wish, like so:
 
-                        Settings.System.putInt(cr, "rom_test_bootreceiver", 1);
+                        Settings.Secure.putInt(cr, "rom_test_bootreceiver", 1);
 
                         or
 
-                        Settings.System.putString(cr, "your_key_name", "some string");
+                        Settings.Secure.putString(cr, "your_key_name", "some string");
 
                         or
 
-                        Settings.System.putFloat(cr, "your_key_name", 1.0F);
+                        Settings.Secure.putFloat(cr, "your_key_name", 1.0F);
 
               Those are just small examples. You can perform various functions at the first boot of your rom.
               This is just a tool to get you started on catching that boot complete action

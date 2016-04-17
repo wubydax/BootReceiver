@@ -1,8 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.wubydax.bootreceiver">
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.wubydax.bootreceiver">
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS"
+                     tools:ignore="ProtectedPermissions"/>
 
     <application
         android:allowBackup="true"
