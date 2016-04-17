@@ -1,3 +1,12 @@
 <resources>
+
+    <!--App strings-->
     <string name="app_name">Boot Receiver</string>
+    <string name="boot_complete_toast">Boot Complete. Toggles updated</string>
+
+
+    <!--Keys and values - untranslatable-->
+    <string name="tiles_key" translatable="false">sysui_qs_tiles</string>
+    <string name="tiles_value" translatable="false">Wifi,MobileData,Flashlight,Location,SilentMode,RotationLock,Bluetooth,PowerSaving,AirplaneMode,DormantMode,UltraPowerSaving,WifiHotspot,PersonalMode,AllShareCast,Nfc,Sync,Aod,SFinder,</string>
+    <string name="active_tiles_number_key" translatable="false">sysui_qs_active_tiles</string>
 </resources>

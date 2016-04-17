@@ -10,10 +10,11 @@ import android.provider.Settings;
 import android.widget.Toast;
 
 /**
- * Created by Dax on 15/09/2015.
+ * Created by Wuby and Dax on 15/09/2015.
+ * Updated for MM support
+ * To be installed in /system/priv-app only!!!
  */
 public class BootReceiver extends BroadcastReceiver {
-
 
 
     @Override
@@ -23,7 +24,8 @@ public class BootReceiver extends BroadcastReceiver {
         SharedPreferences.Editor ed = sp.edit();
         boolean isFirstBoot = sp.getBoolean("isFirst", true);
         if (isFirstBoot) {
-            Toast.makeText(context, "Boot Completed", Toast.LENGTH_SHORT).show();
+            Settings.Secure.putString(cr, context.getString(R.string.tiles_key), context.getString(R.string.tiles_value));
+            Settings.Secure.putInt(cr, context.getString(R.string.active_tiles_number_key), context.getResources().getInteger(R.integer.active_tiles_number));
             //Adopted for working on Settings.Secure
             /*
             You can use this method to make changes to the settings storage
@@ -43,6 +45,7 @@ public class BootReceiver extends BroadcastReceiver {
               This is just a tool to get you started on catching that boot complete action
 
              */
+            Toast.makeText(context, R.string.boot_complete_toast, Toast.LENGTH_SHORT).show();
             ed.putBoolean("isFirst", false).apply();
         }
 
